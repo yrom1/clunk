@@ -22,7 +22,55 @@ if stuff == "":
 
 # Create a C++ source file with a main function
 cpp_code = f"""
+#include <algorithm>
+#include <bitset>
+#include <cctype>
+#include <cerrno>
+#include <cfloat>
+#include <chrono>
+#include <cmath>
+#include <complex>
+#include <condition_variable>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
+#include <deque>
+#include <exception>
+#include <fstream>
+#include <functional>
+#include <iomanip>
+#include <ios>
 #include <iostream>
+#include <istream>
+#include <iterator>
+#include <limits>
+#include <list>
+#include <locale>
+#include <map>
+#include <memory>
+#include <mutex>
+#include <new>
+#include <numeric>
+#include <ostream>
+#include <queue>
+#include <random>
+#include <ratio>
+#include <regex>
+#include <set>
+#include <sstream>
+#include <stack>
+#include <stdexcept>
+#include <streambuf>
+#include <string>
+#include <system_error>
+#include <thread>
+#include <tuple>
+#include <typeinfo>
+#include <unordered_map>
+#include <unordered_set>
+#include <utility>
+#include <valarray>
 
 int main() {{
     {stuff}
@@ -36,7 +84,7 @@ with open("main.cpp", "w") as f:
     f.write(cpp_code)
 
 # Compile the C++ source file using g++
-os.system("g++ main.cpp -o main")
+os.system("g++ -std=c++20 main.cpp -o main")
 
 # Run the resulting executable
 os.system("./main")
