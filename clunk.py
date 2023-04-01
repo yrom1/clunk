@@ -14,7 +14,7 @@ cpp_code = f"""
 int main() {{
     {stuff}
     return 0;
-}}
+}}\
 """
 
 print(cpp_code)
