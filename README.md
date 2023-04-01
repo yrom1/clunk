@@ -1,5 +1,5 @@
 # clunk
-To use Clunk, simply run the `clunk.py` script and enter your C++ code when prompted:
+To use clunk, simply run the `clunk.py` script and enter your C++ code when prompted:
 
 ```
 Ryans-MacBook-Air:~ ryan$ clunk
