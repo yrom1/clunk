@@ -1,24 +1,41 @@
 #!/usr/bin/env python
 
 import os
+import sys
 
-# Prompt the user to enter their C++ code
-print("Enter your C++ code:")
+# Check if a flag is passed to the script
+if len(sys.argv) > 1:
+    # Read lines of input until the user enters a blank line for code to be placed above the main function
+    print("Enter the code to be placed above the main function:")
+    code_above_main = ""
+    while True:
+        line = input()
+        if line.strip() == "":
+            break
+        code_above_main += line + "\n"
 
-# Read lines of input until the user enters a blank line
-stuff = ""
-while True:
-    line = input()
-    if line.strip() == "":
-        break
-    stuff += line + "\n"
+    # Read lines of input until the user enters a blank line for code to be placed inside the main function
+    print("Enter the code to be placed inside the main function:")
+    code_inside_main = ""
+    while True:
+        line = input()
+        if line.strip() == "":
+            break
+        code_inside_main += line + "\n"
+else:
+    code_above_main = ""
+    # Prompt the user to enter their C++ code
+    print("Enter your C++ code:")
+    code_inside_main = ""
+    while True:
+        line = input()
+        if line.strip() == "":
+            break
+        code_inside_main += line + "\n"
 
-# Print the code to verify that it was read correctly
-# print("You entered the following code:")
-# print(stuff)
+if code_inside_main == "":
+    code_inside_main = 'std::cout << "Hello, world!" << std::endl;'
 
-if stuff == "":
-    stuff = '#include <iostream>\n    std::cout << "Hello, world!" << std::endl;'
 
 # Create a C++ source file with a main function
 cpp_code = f"""
@@ -72,13 +89,13 @@ cpp_code = f"""
 #include <utility>
 #include <valarray>
 
+{code_above_main}
+
 int main() {{
-    {stuff}
+    {code_inside_main}
     return 0;
 }}\
 """
-
-# print(cpp_code)
 
 with open("main.cpp", "w") as f:
     f.write(cpp_code)
