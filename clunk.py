@@ -14,8 +14,8 @@ while True:
     stuff += line + "\n"
 
 # Print the code to verify that it was read correctly
-print("You entered the following code:")
-print(stuff)
+# print("You entered the following code:")
+# print(stuff)
 
 if stuff == "":
     stuff = '#include <iostream>\n    std::cout << "Hello, world!" << std::endl;'
@@ -30,7 +30,7 @@ int main() {{
 }}\
 """
 
-print(cpp_code)
+# print(cpp_code)
 
 with open("main.cpp", "w") as f:
     f.write(cpp_code)
