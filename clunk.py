@@ -2,15 +2,22 @@
 
 import os
 
+stuff = input("Enter your C++ code:\n")
+
+if stuff == "":
+    stuff = '#include <iostream>\n    std::cout << "Hello, world!" << std::endl;'
+
 # Create a C++ source file with a main function
-cpp_code = """
+cpp_code = f"""
 #include <iostream>
 
-int main() {
-    std::cout << "Hello, world!" << std::endl;
+int main() {{
+    {stuff}
     return 0;
-}
+}}
 """
+
+print(cpp_code)
 
 with open("main.cpp", "w") as f:
     f.write(cpp_code)
