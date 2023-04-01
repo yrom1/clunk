@@ -15,6 +15,15 @@ std::cout << 42 << std::endl;
 Enter your C++ code:
 std::vector<int> v = {1, 2, 3};
 
+(main) Ryans-MacBook-Air:clunk ryan$ clunk
+Enter your C++ code:
+std::vector<int> v = {1, 2, 3};
+for (int i = 0; i < v.size(); ++i) {
+    std::cout << v[i] << " ";
+}
+std::cout << std::endl;
+
+1 2 3
 (main) Ryans-MacBook-Air:clunk ryan$
 ```
 
